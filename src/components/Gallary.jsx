@@ -1,9 +1,12 @@
-import React from 'react'
-import GallaryButtons from './GallaryButtons'
-import GallaryCard from './GallaryCard'
+import React, { useState } from 'react';
+import GallaryButtons from './GallaryButtons';
+import GallaryCard from './GallaryCard';
+
 const Gallary = () => {
+  const [activeButton, setActiveButton] = useState("all");
+
   return (
-     <section className="flex flex-col items-center border border-indigo-600 w-full max-w-[1592px] h-auto md:h-[1082px] mt-[50px] md:mt-[230px] mx-auto rounded-[12px] px-6 md:px-[120px] pt-[50px] md:pt-0 pb-[50px] md:pb-[150px] gap-[20px] md:gap-[50px] bg-[#FFF5F0]">
+    <section className="flex flex-col items-center border border-indigo-600 w-full max-w-[1592px] h-auto md:h-[3799px] mt-[50px] md:mt-[230px] mx-auto rounded-[12px] px-6 md:px-[120px] pt-[50px] md:pt-0 pb-[50px] md:pb-[150px] gap-[20px] md:gap-[50px] bg-[#FFF5F0]">
       
       {/* Section Label */}
       <div className="w-[146px] md:h-[47px] rounded-[8px] border-2 border-[#262626] shadow-[.5px_.5px_0_1px_#1E1E1E] mx-auto text-center text-lg pt-2">
@@ -22,14 +25,17 @@ const Gallary = () => {
         </p>
       </div>
         
-<GallaryButtons />
+      {/* Buttons */}
+      <GallaryButtons activeButton={activeButton} setActiveButton={setActiveButton} />
 
-<GallaryCard />
-
- 
-      
+      {/* Cards */}
+      <GallaryCard title="ClassRooms" activeButton={activeButton} />
+      <GallaryCard title="Library" activeButton={activeButton} />
+      <GallaryCard title="Science Lab" activeButton={activeButton} />
+      <GallaryCard title="Computer Lab" activeButton={activeButton} />
+      <GallaryCard title="Garden and Nature Area" activeButton={activeButton} />
     </section>
-  )
-}
+  );
+};
 
-export default Gallary
+export default Gallary;
