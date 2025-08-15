@@ -1,18 +1,19 @@
-import Card from "./Card";
-
-const Feature = () => {
+import React from 'react'
+import GallaryButtons from './GallaryButtons'
+import GallaryCard from './GallaryCard'
+const Gallary = () => {
   return (
-    <section className="relative flex flex-col items-center border border-indigo-600 w-full max-w-[1592px] h-auto md:h-[1082px] mt-[50px] md:mt-[230px] mx-auto rounded-[12px] px-6 md:px-[120px] pt-[50px] pb-[50px] md:pt-[0px] md:pb-[150px] gap-[20px] md:gap-[50px] bg-[#FFF5F0]">
+     <section className="flex flex-col items-center border border-indigo-600 w-full max-w-[1592px] h-auto md:h-[1082px] mt-[50px] md:mt-[230px] mx-auto rounded-[12px] px-6 md:px-[120px] pt-[50px] md:pt-0 pb-[50px] md:pb-[150px] gap-[20px] md:gap-[50px] bg-[#FFF5F0]">
       
-      {/* Section Tag */}
+      {/* Section Label */}
       <div className="w-[146px] md:h-[47px] rounded-[8px] border-2 border-[#262626] shadow-[.5px_.5px_0_1px_#1E1E1E] mx-auto text-center text-lg pt-2">
         Our Features
       </div>
 
-      {/* Title & Description */}
+      {/* Title */}
       <div className="w-full max-w-[765px] text-center">
         <h3 className="mt-1 text-2xl md:text-6xl font-bold Raleway text-[#262626]">
-          Our Special Features
+          Our Room Gallery  
         </h3>
         <p className="mt-4 text-sm md:text-base Raleway text-[#262626]">
           Our kindergarten school provides a nurturing and stimulating environment, 
@@ -20,18 +21,15 @@ const Feature = () => {
           on an exciting educational journey.
         </p>
       </div>
+        
+<GallaryButtons />
 
-      {/* Cards */}
-      <div className="flex flex-wrap gap-6 justify-center w-full">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+<GallaryCard />
+
+ 
+      
     </section>
-  );
-};
+  )
+}
 
-export default Feature;
+export default Gallary
